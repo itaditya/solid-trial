@@ -2,7 +2,7 @@ import { Suspense, ErrorBoundary } from 'solid-js';
 import { Router } from 'solid-app-router';
 
 import { ControlsProvider } from './ControlsStore';
-import { Pages } from './Pages';
+import { Pages } from './pages/Pages';
 import { Modal } from './Modal';
 import styles from './App.module.css';
 
@@ -15,12 +15,12 @@ function App() {
     <div class={styles.App}>
       <ErrorBoundary fallback={getErrorFallback}>
         <Router>
-          <Suspense fallback={<div>Loading...</div>}>
-            <ControlsProvider>
+          <ControlsProvider>
+            <Suspense fallback={<div>Loading...</div>}>
               <Pages />
               <Modal />
-            </ControlsProvider>
-          </Suspense>
+            </Suspense>
+          </ControlsProvider>
         </Router>
       </ErrorBoundary>
     </div>

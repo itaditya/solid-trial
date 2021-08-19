@@ -1,4 +1,4 @@
-import { useControls } from '../../ControlsStore';
+import { useControls } from '../../../ControlsStore';
 
 export function CreateItem() {
   const [state, { openModal }] = useControls();

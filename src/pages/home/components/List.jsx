@@ -1,9 +1,11 @@
-import { createSignal, For } from 'solid-js';
-import { useData } from 'solid-app-router';
+import { createEffect, createSignal, For } from 'solid-js';
+import { useData, useLocation } from 'solid-app-router';
 
 export function List() {
-  const [page, setPage] = createSignal(1);
   const [data, { mutate }] = useData();
+  const location = useLocation();
+  const initialPage = Number(location.query.page) || 1;
+  const [page, setPage] = createSignal(initialPage);
 
   function handleAddItem() {
     mutate([

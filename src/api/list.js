@@ -26,7 +26,7 @@ function fetchList(page, getPrev) {
 }
 
 export function createGetList(router) {
-  console.log(`router`, router); // aditodo remove this
+  console.log(`router`, router.location.page); // aditodo remove this
   const page = 1;
   return createResource(page, fetchList, {
     name: 'list-resource',

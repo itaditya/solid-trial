@@ -1,7 +1,7 @@
-import { List } from './List';
-import { CreateItem } from './CreateItem';
+import { List } from './components/List';
+import { CreateItem } from './components/CreateItem';
 
-export default function Home() {
+function Home() {
   return (
     <div>
       Home
@@ -10,3 +10,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

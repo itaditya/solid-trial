@@ -1,9 +1,9 @@
 import { Suspense, ErrorBoundary } from 'solid-js';
+import { Router } from 'solid-app-router';
 
 import { ControlsProvider } from './ControlsStore';
+import { Pages } from './Pages';
 import { Modal } from './Modal';
-import { List } from './List';
-import { CreateItem } from './CreateItem';
 import styles from './App.module.css';
 
 function getErrorFallback(error) {
@@ -14,13 +14,14 @@ function App() {
   return (
     <div class={styles.App}>
       <ErrorBoundary fallback={getErrorFallback}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <ControlsProvider>
-            <CreateItem />
-            <List />
-            <Modal />
-          </ControlsProvider>
-        </Suspense>
+        <Router>
+          <Suspense fallback={<div>Loading...</div>}>
+            <ControlsProvider>
+              <Pages />
+              <Modal />
+            </ControlsProvider>
+          </Suspense>
+        </Router>
       </ErrorBoundary>
     </div>
   );

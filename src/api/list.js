@@ -18,7 +18,6 @@ function fetchList(page, getPrev) {
     page,
     oldData,
   });
-
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(listData);
@@ -26,7 +25,9 @@ function fetchList(page, getPrev) {
   });
 }
 
-export function createGetList(page) {
+export function createGetList(router) {
+  console.log(`router`, router); // aditodo remove this
+  const page = 1;
   return createResource(page, fetchList, {
     name: 'list-resource',
   });

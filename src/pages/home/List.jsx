@@ -1,10 +1,9 @@
 import { createSignal, For } from 'solid-js';
-
-import { createGetList } from './api/list';
+import { useData } from 'solid-app-router';
 
 export function List() {
   const [page, setPage] = createSignal(1);
-  const [data, { mutate }] = createGetList(page);
+  const [data, { mutate }] = useData();
 
   function handleAddItem() {
     mutate([

@@ -11,8 +11,14 @@ const listData = [
   },
 ];
 
-function fetchList(page) {
-  console.log(`page`, page); // aditodo remove this
+function fetchList(page, getPrev) {
+  const oldData = getPrev();
+
+  console.log({
+    page,
+    oldData,
+  });
+
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(listData);

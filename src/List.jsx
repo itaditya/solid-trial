@@ -32,7 +32,7 @@ export function List() {
 
   return (
     <div>
-      List
+      <h2>Page {page()}</h2>
       <button onClick={handleAddItem}>Add Item</button>
       <button onClick={[handleChangePage, 'prev']}>Prev Page</button>
       <button onClick={[handleChangePage, 'next']}>Next Page</button>
